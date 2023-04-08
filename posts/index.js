@@ -16,6 +16,12 @@ app.get('/post', (req, res)=>{
     res.send(posts)
 })
 
+app.post('/events', (req, res)=>{
+    console.log('Received Event', req.body.type);
+
+    return res.send(req.body.type)
+})
+
 
 app.post('/post', async (req, res)=>{
     const id = randomBytes(4).toString('hex');
